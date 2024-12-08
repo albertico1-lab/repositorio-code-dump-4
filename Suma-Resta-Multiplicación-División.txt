@@ -1,0 +1,63 @@
+%include        'funciones.asm'
+
+SECTION .text
+global  _start
+
+_start:
+
+    mov     eax, 90     ; mover nuestro primer número a eax
+    mov     ebx, 9      ; mover nuestro segundo número a ebx
+    add     eax, ebx    ; sumar ebx a eax
+    call    iprintLF    ; llamar a nuestra función de impresión de enteros con salto de línea
+
+    call    quit        ; llamar a la función para salir del programa
+------------------------------------------------------------------------------------------------------------------Adición
+  GNU nano 8.2                                                        calculadora_resta.asm                                                                 %include          'funciones.asm'
+
+SECTION .text
+global  _start
+
+_start:
+
+   mov   eax, 90      ; mover el primer numero a eax
+   mov   ebx, 9       ; mover el segundo numero a ebx
+   sub   eax, ebx     ; restar ebx de eax
+   call  iprintLF     ; llamar a nuestra función de impresión de enteros con salto de línea
+
+   call  quit
+------------------------------------------------------------------------------------------------------------------Resta
+%include        'funciones.asm'
+
+SECTION .text
+global  _start
+
+_start:
+
+    mov     eax, 90     ; mover nuestro primer número a eax
+    mov     ebx, 9      ; mover nuestro segundo número a ebx
+    mul     ebx         ; multiplicar eax por ebx
+    call    iprintLF    ; llamar a nuestra función de impresión de enteros con salto de línea
+
+    call    quit
+------------------------------------------------------------------------------------------------------------------Multiplicación
+%include        'funciones.asm'
+
+SECTION .data
+msg1        db      ' remainder '      ; una cadena de mensaje para imprimir correctamente el resultado
+
+SECTION .text
+global  _start
+
+_start:
+
+    mov     eax, 90     ; mover nuestro primer número a eax
+    mov     ebx, 9      ; mover nuestro segundo número a ebx
+    div     ebx         ; dividir eax entre ebx
+    call    iprint      ; llamar a nuestra función de impresión de enteros para el cociente
+    mov     eax, msg1   ; mover nuestra cadena de mensaje a eax
+    call    sprint      ; llamar a nuestra función de impresión de cadenas
+    mov     eax, edx    ; mover el resto a eax
+    call    iprintLF
+
+    call    quit
+-------------------------------------------------------------------------------------------------------------------División
